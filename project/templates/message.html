@@ -1,0 +1,12 @@
+{% block message %}
+{% with messages=get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        
+        <div class="red-text">{{ message }}</div>
+
+    {% endfor %}
+  
+  {% endif %}
+{% endwith %}
+{% endblock %}

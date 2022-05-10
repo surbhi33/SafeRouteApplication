@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block user %}
+<form method="POST">
+    {{ form.csrf_token }}
+    <div class="center">
+        <h1 class="card-title teal-text fa-regular ">Sign Up</h1>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            {{ form.password() }}
+            <label for="password">{{ form.password.label }}</label>
+        </div>
+        <div class="input-field col s12">
+            {{ form.confirm_password() }}
+            <label for="confirm_password">{{ form.confirm_password.label }}</label>
+        </div>
+        <button class="waves-effect waves-light btn center" id="button">{{ form.submit() }}</button>
+        <div><br>
+            <div class="divider">
+            </div>
+        </div>
+        <br>
+    </div>
+
+</form>
+<div class=" teal-text ">
+    <span id="switch">Go back to </span><a href="/">Log In</a>
+</div><br>
+
+{% endblock user %}

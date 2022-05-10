@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class = 'center'>
+    <h1 class = "card-title teal-text fa-regular ">Sway</h1>
+  </div>
+
+<div class="row">
+<div class="card center col m4 s12 offset-m4">
+
+
+<div class="row">
+    <div class="input-field col s12">
+        <input id="email" type="text" class="validate">
+        <label for="email" id="msg">Enter your registered email address to receive a six digit code</label>
+    </div>
+    <a class="waves-effect waves-light fa-regular center" id="button" href="#">Submit</a>
+</div>
+
+</div>
+</div>
+
+<script type = 'text/javascript', src = "./static/js/frgt_pswd.js"></script>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<ul id="slide-out" class="sidenav">
+  <div class='center'>
+    <h1 class="card-title teal-text fa-regular ">Sway</h1>
+  </div>
+  <form method="POST" class="center">
+    {{ scoreform.csrf_token }}
+
+    <div class="input-field col s12">
+        {{ scoreform.Source(id_="start") }}
+        <label for="email">{{ scoreform.Source.label }}</label>
+    </div>
+
+   
+    <div class="input-field col s12">
+        {{ scoreform.Destination(id_="end") }}
+        <label for="password">{{ scoreform.Destination.label }}</label>
+    </div>
+
+    
+    <button class="waves-effect waves-light btn center" id={{btn}}>{{ scoreform.submit(class_=" white-text") }}</button>
+
+    <br>
+
+</form>
+
+
+
+{% for value in srt_full %}
+<div class="card blue darken-1">
+  <div class="card-content white-text card {{value[1]}} darken-1">
+    <span class="card-title">Danger Score: {{value[0][1]}}</span>
+    <span class="card-text">{{value[0][2]}}</span>
+  </div>
+{% endfor %}
+
+  <footer class="page-footer white ">
+
+    <div class="footer-copyright row center teal-text">
+ 
+        <span class="col m3">
+          <a href="about.html">About Us</a>
+        </span>
+        <span class=" col m3">
+          <a href="feedback">Feedback</a>
+        </span>
+        <span class="col m3">
+          <a href="logout">LogOut</a>
+        </span>
+        <span class=" col m3">
+          <a href="subscribe">Subscribe!</a>
+        </span>
+      </div>
+
+  </footer>
+</ul>
+
+
+<div class="center" style="position: absolute;z-index: 1;top:50%">
+  <a href="#" data-target="slide-out" class="btn-small sidenav-trigger tooltipped black" data-position="bottom"
+    data-tooltip="Open Sidenav"><i class="material-icons">arrow_forward</i></a>
+</div>
+
+
+<div id="map" style="float:left;width:100%;height:100%">
+</div>
+
+
+
+<script type='text/javascript'>
+  color = {{ color | tojson }}
+</script>
+<script type="text/javascript">
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+    instances[0].open()
+
+    
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems);
+  });
+</script>
+<script type='text/javascript' , src="./static/js/maps.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ value }}&callback=initMap&Libraries=&v=weekly"
+  async></script>
+
+
+{% endblock %}

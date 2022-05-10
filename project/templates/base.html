@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="AIzaSyCINW6uGcvCKu9J-8AkdKFt4YcBObovM94.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"> 
+
+        <style>
+            body {
+                background-color: #f0f2f5;
+            }
+        </style>
+        <title>SWAY</title>
+        <!-- <link rel="stylesheet", href = "./static/css/materialize.min.css"/> -->
+        <link rel="stylesheet", href = "{{ url_for('static',filename = 'css/materialize.css')}}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename = 'favicon.ico')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"> 
+    </head>
+    <body>
+        {% block content %}
+
+        {% endblock content %}
+
+        
+    
+ 
+    </body>
+
+    <script type = 'text/javascript', src = "{{ url_for('static',filename = 'js/materialize.min.js')}}"></script>
+    <script type = 'text/javascript'>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems);
+    });
+    </script>
+</html>

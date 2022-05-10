@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block user %}
+
+<form method="POST">
+    {{ form.csrf_token }}
+    <div class="center">
+        <h1 class="card-title teal-text ">Forgot Password ?</h1>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            {{ form.email() }}
+            <label for="email">{{ form.email.label }}</label>
+        </div>
+        <button class="waves-effect waves-light btn center" id="button">{{ form.submit() }}</button>
+        <div><br>
+            <div class="divider">
+            </div>
+        </div>
+        <br>
+    </div>
+</form>
+
+{% endblock user %}
